@@ -1,4 +1,4 @@
-name: Run R Script
+name: Update measles charts
 
 on:
   push:
@@ -10,60 +10,34 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-r-script:
+  run-python-script:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup R
-        uses: r-lib/actions/setup-r@v2
-
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libcurl4-openssl-dev \
-            libssl-dev \
-            libgit2-dev \
-            libxml2-dev \
-            libmagick++-dev \
-            libharfbuzz-dev \
-            libfribidi-dev \
-            libfontconfig1-dev \
-            pandoc \
-            git
-
-      - name: Cache R packages
-        uses: actions/cache@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          path: ~/Rlib
-          key: ${{ runner.os }}-R-${{ hashFiles('**/scripts/*.R') }}
-          restore-keys: |
-            ${{ runner.os }}-R-
+          python-version: "3.12"
 
-      - name: Install R packages
+      - name: Run Python scraper
         env:
-          GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          mkdir -p ~/Rlib
-          echo 'R_LIBS_USER=~/Rlib' >> ~/.Renviron
-          echo 'options(repos = c(CRAN = "https://cloud.r-project.org"))' >> ~/.Rprofile
-          Rscript -e 'install.packages("tidyverse", dependencies = TRUE, lib="~/Rlib")'
-          Rscript -e 'install.packages(c("jsonlite", "remotes", "magick", "usethis"), dependencies = TRUE, lib="~/Rlib")'
-          Rscript -e 'remotes::install_github("munichrocker/DatawRappr", lib="~/Rlib", auth_token=Sys.getenv("GITHUB_PAT"))'
-          Rscript -e '.libPaths("~/Rlib"); if (!require("tidyverse", lib.loc = "~/Rlib")) stop("tidyverse did not install")'
-
-      - name: Run R script
-        env:
-          API_KEY: ${{ secrets.DW_API_KEY }}
+          DW_API_KEY: ${{ secrets.DW_API_KEY }}
           CHART_KEY: ${{ secrets.CHART_KEY }}
           CHART_KEY1: ${{ secrets.CHART_KEY1 }}
           CHART_KEY2: ${{ secrets.CHART_KEY2 }}
         run: |
-          . ~/.Renviron
-          Rscript "scripts/measles.R"
+          python scripts/measles.py
+
+      - name: Commit updated snapshots
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add last_weekly_us.csv last_map_us.csv last_annual_us.csv
+          git diff --cached --quiet || git commit -m "Update measles data snapshots"
+          git push
 
 
 
