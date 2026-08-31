@@ -90,7 +90,17 @@ def normalize_map(raw: list[dict[str, str]]) -> tuple[list[dict[str, str]], int]
     if not years:
         raise RuntimeError("CDC map feed did not contain a year")
     current_year = max(years)
-    rows = [row for row in raw if int(row["year"]) == current_year]
+    rows = []
+    for source_row in raw:
+        if int(source_row["year"]) != current_year:
+            continue
+        row = dict(source_row)
+        # An empty cell makes Datawrapper render the jurisdiction as having
+        # no value, so zero-case states appear blank on the map.
+        for key, value in row.items():
+            if key.startswith("cases") and value == "0":
+                row[key] = ""
+        rows.append(row)
     return sorted(rows, key=lambda row: row["geography"]), current_year
 
 
@@ -182,7 +192,7 @@ def main() -> int:
             f"<i>Chart updated {updated}<br>Data by last day of the week.</i>",
             date_column="week_end", color=True)),
         ("map", state, root / "last_map_us.csv", f"Confirmed measles cases by state in {current_year}", metadata(
-            f"There have been {sum(row['cases_range'] != '0' for row in state)} states with positive cases of measles in {current_year}.",
+            f"There have been {sum(row['cases_range'] != '' for row in state)} states with positive cases of measles in {current_year}.",
             f"Chart updated {updated}.")),
         ("annual", annual, root / "last_annual_us.csv", f"Confirmed measles cases by year, 2000-{current_year}", metadata(
             f"There have been {total_current:,} positive measles cases in {current_year}.",
