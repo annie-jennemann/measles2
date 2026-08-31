@@ -1,53 +1,53 @@
 geography,geography_esp,cases_range,cases_calendar_year,year,cases_2026,cases_2025,cases_2024
-Alabama,Alabama,0,0,2026,0,1,0
+Alabama,Alabama,1-9,1,2026,1,1,0
 Alaska,Alaska,1-9,1,2026,1,4,0
-Arizona,Arizona,50-99,65,2026,65,222,5
+Arizona,Arizona,100-499,110,2026,110,222,5
 Arkansas,Arkansas,0,0,2026,0,8,0
-California,California,10-49,40,2026,40,26,13
-Colorado,Colorado,10-49,16,2026,16,35,0
-Connecticut,Connecticut,0,0,2026,0,1,0
-Delaware,Delaware,0,0,2026,0,0,0
-District of Columbia,Distrito de Columbia,0,0,2026,0,0,1
-Florida,Florida,100-499,130,2026,130,8,11
-Georgia,Georgia,1-9,2,2026,2,10,5
+California,California,50-99,54,2026,54,26,13
+Colorado,Colorado,10-49,24,2026,24,35,0
+Connecticut,Connecticut,1-9,2,2026,2,1,0
+Delaware,Delaware,10-49,22,2026,22,0,0
+District of Columbia,Distrito de Columbia,1-9,1,2026,1,0,1
+Florida,Florida,100-499,142,2026,142,8,11
+Georgia,Georgia,1-9,7,2026,7,10,5
 Hawaii,Hawái,0,0,2026,0,2,0
-Idaho,Idaho,1-9,2,2026,2,14,0
+Idaho,Idaho,1-9,3,2026,3,14,0
 Illinois,Illinois,1-9,4,2026,4,14,67
-Indiana,Indiana,0,0,2026,0,10,1
-Iowa,Iowa,0,0,2026,0,9,0
-Kansas,Kansas,0,0,2026,0,91,0
-Kentucky,Kentucky,1-9,4,2026,4,13,0
-Louisiana,Luisiana,0,0,2026,0,3,2
+Indiana,Indiana,1-9,2,2026,2,10,1
+Iowa,Iowa,10-49,15,2026,15,9,0
+Kansas,Kansas,1-9,1,2026,1,91,0
+Kentucky,Kentucky,10-49,23,2026,23,13,0
+Louisiana,Luisiana,1-9,1,2026,1,3,2
 Maine,Maine,1-9,5,2026,5,0,0
-Maryland,Maryland,0,0,2026,0,3,1
+Maryland,Maryland,10-49,18,2026,18,3,1
 Massachusetts,Massachusetts,1-9,2,2026,2,0,1
-Michigan,Míchigan,1-9,7,2026,7,29,7
-Minnesota,Minnesota,10-49,15,2026,15,26,65
+Michigan,Míchigan,10-49,15,2026,15,29,7
+Minnesota,Minnesota,10-49,17,2026,17,26,65
 Mississippi,Misisipi,0,0,2026,0,0,0
-Missouri,Misuri,1-9,1,2026,1,6,2
+Missouri,Misuri,1-9,5,2026,5,6,2
 Montana,Montana,1-9,5,2026,5,36,0
 Nebraska,Nebraska,1-9,1,2026,1,5,0
 Nevada,Nevada,0,0,2026,0,2,0
 New Hampshire,Nuevo Hampshire,0,0,2026,0,0,2
-New Jersey,Nueva Jersey,0,0,2026,0,12,7
-New Mexico,Nuevo México,10-49,16,2026,16,100,2
-New York,Nueva York,1-9,4,2026,4,26,1
-New York City,Ciudad de Nueva York,1-9,3,2026,3,15,13
+New Jersey,Nueva Jersey,1-9,1,2026,1,12,7
+New Mexico,Nuevo México,10-49,18,2026,18,100,2
+New York,Nueva York,10-49,21,2026,21,26,1
+New York City,Ciudad de Nueva York,1-9,5,2026,5,15,13
 North Carolina,Carolina del Norte,10-49,22,2026,22,2,1
-North Dakota,Dakota del Norte,10-49,27,2026,27,36,0
-Ohio,Ohio,10-49,11,2026,11,40,7
+North Dakota,Dakota del Norte,10-49,38,2026,38,36,0
+Ohio,Ohio,50-99,80,2026,80,40,7
 Oklahoma,Oklahoma,1-9,1,2026,1,17,1
-Oregon,Oregón,10-49,17,2026,17,1,31
-Pennsylvania,Pensilvania,10-49,12,2026,12,16,6
-Rhode Island,Rhode Island,0,0,2026,0,1,0
-South Carolina,Carolina del Sur,500+,667,2026,667,333,1
-South Dakota,Dakota del Sur,1-9,8,2026,8,16,1
-Tennessee,Tennessee,0,0,2026,0,8,4
-Texas,Texas,100-499,180,2026,180,803,1
-Utah,Utah,100-499,414,2026,414,189,0
+Oregon,Oregón,10-49,48,2026,48,1,31
+Pennsylvania,Pensilvania,100-499,371,2026,371,16,6
+Rhode Island,Rhode Island,1-9,1,2026,1,1,0
+South Carolina,Carolina del Sur,500+,670,2026,670,333,1
+South Dakota,Dakota del Sur,10-49,11,2026,11,16,1
+Tennessee,Tennessee,1-9,3,2026,3,8,4
+Texas,Texas,100-499,190,2026,190,803,1
+Utah,Utah,500+,526,2026,526,189,0
 Vermont,Vermont,1-9,1,2026,1,2,1
-Virginia,Virginia,10-49,16,2026,16,6,1
-Washington,Washington,10-49,37,2026,37,11,6
-West Virginia,Virginia Occidental,0,0,2026,0,0,1
-Wisconsin,Wisconsin,1-9,2,2026,2,36,1
-Wyoming,Wyoming,0,0,2026,0,15,0
+Virginia,Virginia,100-499,176,2026,176,6,1
+Washington,Washington,50-99,55,2026,55,11,6
+West Virginia,Virginia Occidental,1-9,2,2026,2,0,1
+Wisconsin,Wisconsin,10-49,38,2026,38,36,1
+Wyoming,Wyoming,1-9,2,2026,2,15,0
