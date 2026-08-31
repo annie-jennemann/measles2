@@ -26,8 +26,6 @@ FEEDS = {
     "map": f"{CDC_BASE}/MeaslesCasesMap.json",
     "annual": f"{CDC_BASE}/MeaslesCasesYear.json",
 }
-SOURCE_NAME = "Centers for Disease Control and Prevention"
-BYLINE = "Annie Jennemann/Get the Facts Data Team"
 
 
 def fetch_json(url: str) -> list[dict[str, str]]:
@@ -147,7 +145,7 @@ class Datawrapper:
 
 def metadata(intro: str, annotate: str, *, date_column: str | None = None, color: bool = False) -> dict:
     result = {
-        "describe": {"source-name": SOURCE_NAME, "byline": BYLINE, "intro": intro},
+        "describe": {"intro": intro},
         "annotate": {"notes": annotate},
         "publish": {"blocks": {"get-the-data": False}},
     }
