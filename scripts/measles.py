@@ -43,6 +43,8 @@ def fetch_json(url: str) -> list[dict[str, str]]:
             payload = json.load(response)
     except (HTTPError, URLError, TimeoutError) as exc:
         raise RuntimeError(f"Could not fetch {url}: {exc}") from exc
+    if isinstance(payload, dict):
+        payload = payload.get("data")
     if not isinstance(payload, list) or not all(isinstance(row, dict) for row in payload):
         raise RuntimeError(f"Unexpected CDC response shape from {url}")
     return payload
